@@ -1,115 +1,688 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <title>سِلف آنتی</title>
-  <link href="https://cdn.fontcdn.ir/Font/Persian/Vazir/Vazir.css" rel="stylesheet">
-  <style>
-    body {
-      font-family: 'Vazir', sans-serif;
-      background-color: #f9f9f9;
-      margin: 0;
-      padding: 20px;
-      direction: rtl;
-      color: #333;
-    }
-
-    h1 {
-      text-align: center;
-      font-weight: bold;
-      font-size: 28px;
-      color: #4db6ac; /* آبی متمایل به یشمی */
-      margin-bottom: 10px;
-    }
-
-    h1 span {
-      font-weight: bold;
-      font-size: 32px;
-    }
-
-    .intro {
-      text-align: center;
-      margin-bottom: 20px;
-      font-size: 18px;
-      line-height: 1.8;
-    }
-
-    .robot-img {
-      display: block;
-      margin: 0 auto 20px;
-      width: 120px;
-      border-radius: 12px;
-    }
-
-    .video-section, .text-section {
-      margin: 30px 0;
-    }
-
-    .video-section h2, .text-section h2 {
-      font-size: 20px;
-      color: #4db6ac;
-      margin-bottom: 10px;
-    }
-
-    .videos {
-      display: flex;
-      gap: 15px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .videos video {
-      width: 220px;
-      border-radius: 12px;
-      box-shadow: none;
-    }
-
-    .text-section p {
-      background-color: #e0f2f1;
-      padding: 15px;
-      border-radius: 10px;
-      font-size: 16px;
-    }
-
-    a {
-      display: block;
-      text-align: center;
-      margin-top: 10px;
-      font-weight: bold;
-      color: #00796b;
-      text-decoration: none;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StarHosting - میزبانی حرفه ای وب</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Vazir', 'Tanha', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --primary-color: #4e54c8;
+            --secondary-color: #8f94fb;
+            --accent-color: #ff6b6b;
+            --dark-color: #333;
+            --light-color: #f8f9fa;
+            --text-color: #444;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo img {
+            height: 40px;
+            margin-left: 10px;
+        }
+        
+        .logo h1 {
+            font-size: 1.5rem;
+            font-weight: 700;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin: 0 15px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+        
+        nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        .auth-buttons {
+            display: flex;
+            align-items: center;
+        }
+        
+        .auth-buttons a {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+            padding: 8px 20px;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+        
+        .auth-buttons .login {
+            border: 1px solid white;
+        }
+        
+        .auth-buttons .register {
+            background-color: white;
+            color: var(--primary-color);
+        }
+        
+        .auth-buttons a:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 150px 0 80px;
+            background: linear-gradient(to right, rgba(78, 84, 200, 0.8), rgba(143, 148, 251, 0.8)), url('https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            margin: 0 10px;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+        
+        .section-title p {
+            color: var(--text-color);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: var(--light-color);
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-card i {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--dark-color);
+        }
+        
+        /* Pricing Section */
+        .pricing {
+            padding: 80px 0;
+            background: linear-gradient(to bottom, #f6f9ff, #eef2ff);
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .pricing-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pricing-card.popular {
+            border: 2px solid var(--primary-color);
+            transform: scale(1.05);
+        }
+        
+        .pricing-card.popular::before {
+            content: 'پیشنهاد ویژه';
+            position: absolute;
+            top: 15px;
+            left: -35px;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 5px 40px;
+            transform: rotate(-45deg);
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+        
+        .pricing-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--dark-color);
+        }
+        
+        .price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .price span {
+            font-size: 1rem;
+            color: var(--text-color);
+        }
+        
+        .pricing-features {
+            list-style: none;
+            margin: 20px 0;
+            text-align: right;
+        }
+        
+        .pricing-features li {
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .pricing-features li i {
+            color: #4caf50;
+            margin-left: 10px;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 0;
+            background-color: white;
+        }
+        
+        .testimonials-slider {
+            max-width: 800px;
+            margin: 0 auto;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .testimonial {
+            text-align: center;
+            padding: 30px;
+        }
+        
+        .testimonial img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 20px;
+            border: 4px solid var(--primary-color);
+        }
+        
+        .testimonial p {
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial .name {
+            font-weight: 600;
+            color: var(--dark-color);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--accent-color);
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-column ul li a:hover {
+            color: white;
+            padding-right: 5px;
+        }
+        
+        .social-icons {
+            display: flex;
+            margin-top: 20px;
+        }
+        
+        .social-icons a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: #444;
+            color: white;
+            border-radius: 50%;
+            margin-left: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            font-size: 0.9rem;
+            color: #999;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .header-content {
+                flex-direction: column;
+            }
+            
+            nav ul {
+                margin: 20px 0;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .pricing-card.popular {
+                transform: scale(1);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+            }
+            
+            .auth-buttons {
+                margin-top: 20px;
+            }
+            
+            .hero {
+                padding: 180px 0 60px;
+            }
+            
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCAxMDAgNDAiPjxwYXRoIGZpbGw9IiNmZmYiIGQ9Ik04MCAxMGgtNjB2MjBoNjB2LTIwem0tNDAgMTBsLTEwLTEwaDIwdjIwaC0xMHoiLz48cGF0aCBmaWxsPSIjNGU1NGM4IiBkPSJNNDAgMTBsMTAgMTBoMTB2LTEwaC0yMHoiLz48L3N2Zz4=" alt="StarHosting Logo">
+                    <h1>StarHosting</h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#">خانه</a></li>
+                        <li><a href="#">میزبانی وب</a></li>
+                        <li><a href="#">سرور مجازی</a></li>
+                        <li><a href="#">سرور اختصاصی</a></li>
+                        <li><a href="#">دامین</a></li>
+                        <li><a href="#">تماس با ما</a></li>
+                    </ul>
+                </nav>
+                <div class="auth-buttons">
+                    <a href="#" class="login">ورود</a>
+                    <a href="#" class="register">ثبت نام</a>
+                </div>
+            </div>
+        </div>
+    </header>
 
-  <h1><span>سِلف آنتی</span> ربات مدیریت گروه - رایگان</h1>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2>میزبانی حرفه‌ای برای وبسایت شما</h2>
+                <p>با سرویس‌های میزبانی پرسرعت و مطمئن ما، وبسایت خود را به بهترین شکل میزبانی کنید و از پشتیبانی 24 ساعته ما بهره‌مند شوید.</p>
+                <div class="hero-buttons">
+                    <a href="#" class="cta-button">شروع کنید</a>
+                    <a href="#" class="cta-button" style="background: transparent; border: 2px solid white;">بیشتر بدانید</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <div class="intro">
-    ⌬ربات مدیریت گروهِ سِلف آنتی ⌬<br>
-    اگه دنبال یه ربات مدیریت گروه رایگان پیشرفته هستی بهت سلف آنتی رو معرفی میکنم چون هیچ گونه محدودیتی ندارد یعنی رایگانه درضمن همیشه آنلاین و پر از ات. منتظر چی هستی؟ و... رو به گروهت اضافه کن تا خودت تفاوت رو ببینی!<br>
-    <strong>سِلف آنتی رایگان - داعمی - پشرفته</strong>
-  </div>
+    <!-- Services Section -->
+    <section class="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>سرویس‌های ما</h2>
+                <p>ما بهترین سرویس‌های میزبانی را با بالاترین کیفیت و پشتیبانی ارائه می‌دهیم</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <i class="fas fa-server"></i>
+                    <h3>میزبانی اشتراکی</h3>
+                    <p>سرویس‌های میزبانی اشتراکی با قیمت مناسب و کیفیت بالا برای وبسایت‌های کوچک و متوسط</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-cloud"></i>
+                    <h3>سرور مجازی</h3>
+                    <p>سرورهای مجازی پرسرعت با منابع اختصاصی و کنترل کامل برای وبسایت‌های پرترافیک</p>
+                </div>
+                <div class="service-card">
+                    <i class="fas fa-database"></i>
+                    <h3>سرور اختصاصی</h3>
+                    <p>سرورهای اختصاصی با سخت‌افزار قدرتمند برای enterpriseها و وبسایت‌های بسیار پربازدید</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <img class="robot-img" src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD... (اینجا باید Base64 کامل تصویرت قرار بگیره)" alt="ربات سلف آنتی">
+    <!-- Pricing Section -->
+    <section class="pricing">
+        <div class="container">
+            <div class="section-title">
+                <h2>تعرفه‌های میزبانی</h2>
+                <p>مناسب‌ترین پلن میزبانی را برای نیازهای خود انتخاب کنید</p>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <h3>پلن پایه</h3>
+                    <div class="price">۲۹,۰۰۰ <span>تومان ماهیانه</span></div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> ۵ گیگابایت فضای دیسک</li>
+                        <li><i class="fas fa-check"></i> ترافیک نامحدود</li>
+                        <li><i class="fas fa-check"></i> ۱۰ دامنه اضافه</li>
+                        <li><i class="fas fa-check"></i> ۱۰ حساب ایمیل</li>
+                        <li><i class="fas fa-check"></i> پشتیبانی ۲۴/۷</li>
+                    </ul>
+                    <a href="#" class="cta-button">خرید پلن</a>
+                </div>
+                <div class="pricing-card popular">
+                    <h3>پلن حرفه‌ای</h3>
+                    <div class="price">۵۹,۰۰۰ <span>تومان ماهیانه</span></div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> ۱۵ گیگابایت فضای دیسک</li>
+                        <li><i class="fas fa-check"></i> ترافیک نامحدود</li>
+                        <li><i class="fas fa-check"></i> ۳۰ دامنه اضافه</li>
+                        <li><i class="fas fa-check"></i> ۳۰ حساب ایمیل</li>
+                        <li><i class="fas fa-check"></i> پشتیبانی ۲۴/۷</li>
+                    </ul>
+                    <a href="#" class="cta-button">خرید پلن</a>
+                </div>
+                <div class="pricing-card">
+                    <h3>پلن enterprise</h3>
+                    <div class="price">۱۲۹,۰۰۰ <span>تومان ماهیانه</span></div>
+                    <ul class="pricing-features">
+                        <li><i class="fas fa-check"></i> ۵۰ گیگابایت فضای دیسک</li>
+                        <li><i class="fas fa-check"></i> ترافیک نامحدود</li>
+                        <li><i class="fas fa-check"></i> دامنه اضافه نامحدود</li>
+                        <li><i class="fas fa-check"></i> حساب ایمیل نامحدود</li>
+                        <li><i class="fas fa-check"></i> پشتیبانی ۲۴/۷</li>
+                    </ul>
+                    <a href="#" class="cta-button">خرید پلن</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <a href="https://rubika.ir/SeLfAnTi" target="_blank">مشاهده در روبیکا</a>
+    <!-- Testimonials Section -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>نظرات مشتریان</h2>
+                <p>مشتریان ما چه می‌گویند</p>
+            </div>
+            <div class="testimonials-slider">
+                <div class="testimonial">
+                    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Customer">
+                    <p>"من بیش از ۳ سال است که از سرویس‌های StarHosting استفاده می‌کنم و هیچگاه مشکل جدی نداشتم. پشتیبانی آن‌ها واقعاً عالی است."</p>
+                    <div class="name">علیرضا محمدی</div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <div class="video-section">
-    <h2>آموزش فیلمی فعالسازی 👇</h2>
-    <div class="videos">
-      <video controls src="film1.mp4"></video>
-      <video controls src="film2.mp4"></video>
-      <video controls src="film3.mp4"></video>
-    </div>
-  </div>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>درباره ما</h3>
+                    <p>StarHosting با بیش از ۱۰ سال سابقه در زمینه میزبانی وب، ارائه‌دهنده خدمات میزبانی پرسرعت و مطمئن برای وبسایت‌های ایرانی است.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-telegram"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>لینک‌های سریع</h3>
+                    <ul>
+                        <li><a href="#">خانه</a></li>
+                        <li><a href="#">سرویس‌ها</a></li>
+                        <li><a href="#">تعرفه‌ها</a></li>
+                        <li><a href="#">وبلاگ</a></li>
+                        <li><a href="#">تماس با ما</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>سرویس‌ها</h3>
+                    <ul>
+                        <li><a href="#">میزبانی اشتراکی</a></li>
+                        <li><a href="#">سرور مجازی</a></li>
+                        <li><a href="#">سرور اختصاصی</a></li>
+                        <li><a href="#">ثبت دامنه</a></li>
+                        <li><a href="#">گواهی SSL</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>تماس با ما</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> تهران، خیابان آزادی، دانشگاه شریف</li>
+                        <li><i class="fas fa-phone"></i> ۰۲۱-۱۲۳۴۵۶۷۸</li>
+                        <li><i class="fas fa-envelope"></i> info@starhosting.ir</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>کلیه حقوق مادی و معنوی این وبسایت متعلق به StarHosting می‌باشد. © ۱۴۰۲</p>
+            </div>
+        </div>
+    </footer>
 
-  <div class="text-section">
-    <h2>آموزش فعالسازی ربات متنی 👇</h2>
-    <p>
-      برای فعال‌سازی ربات، ابتدا وارد گروه خود شوید، سپس لینک روبیکا را باز کرده و گزینه "افزودن به گروه" را انتخاب کنید. پس از اضافه شدن، دستور /start را ارسال کنید تا ربات فعال شود. تنظیمات پیشرفته نیز از طریق منوی ربات در دسترس است.
-    </p>
-  </div>
-
+    <script>
+        // Simple testimonial slider
+        document.addEventListener('DOMContentLoaded', function() {
+            const testimonials = [
+                {
+                    text: '"من بیش از ۳ سال است که از سرویس‌های StarHosting استفاده می‌کنم و هیچگاه مشکل جدی نداشتم. پشتیبانی آن‌ها واقعاً عالی است."',
+                    name: 'علیرضا محمدی',
+                    image: 'https://randomuser.me/api/portraits/men/32.jpg'
+                },
+                {
+                    text: '"سرعت سرویس‌های میزبانی StarHosting واقعاً قابل قبول است. از زمانی که host خود را عوض کردم، بازدیدکنندگانم از سرعت سایت راضی‌تر هستند."',
+                    name: 'فاطمه زارعی',
+                    image: 'https://randomuser.me/api/portraits/women/44.jpg'
+                },
+                {
+                    text: '"پشتیبانی ۲۴ ساعته StarHosting واقعاً به درد بخور است. هر زمان که مشکلی پیش آمده، در کمتر از ۱ ساعت پاسخ گرفته‌ام."',
+                    name: 'محمد رضایی',
+                    image: 'https://randomuser.me/api/portraits/men/22.jpg'
+                }
+            ];
+            
+            let currentTestimonial = 0;
+            const testimonialElement = document.querySelector('.testimonial');
+            
+            function showTestimonial(index) {
+                const testimonial = testimonials[index];
+                testimonialElement.innerHTML = `
+                    <img src="${testimonial.image}" alt="Customer">
+                    <p>${testimonial.text}</p>
+                    <div class="name">${testimonial.name}</div>
+                `;
+            }
+            
+            // Auto change testimonial every 5 seconds
+            setInterval(() => {
+                currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+                showTestimonial(currentTestimonial);
+            }, 5000);
+            
+            // Initialize first testimonial
+            showTestimonial(currentTestimonial);
+        });
+    </script>
 </body>
 </html>
